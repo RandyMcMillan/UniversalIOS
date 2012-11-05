@@ -48,13 +48,21 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
+ 
+    
+    [self.tblView deselectRowAtIndexPath:indexPath animated:YES];
+
+    
   SubDetailViewController_iPad *subDetail = [[SubDetailViewController_iPad alloc] init];
   UINavigationController *nav             = [[UINavigationController alloc] initWithRootViewController:subDetail];
 
-  nav.modalPresentationStyle = UIModalPresentationPageSheet;
-  
-  [self presentModalViewController:nav animated:YES];
+    
+    
+    //Present a full screen modal view
+    nav.modalPresentationStyle = UIModalPresentationFullScreen;
+    nav.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    
+    [self presentModalViewController:nav animated:YES];
 }
 
 - (void)viewDidUnload {
