@@ -23,6 +23,20 @@
   self.tblView.frame            = tblFrame;
   self.tblView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
+    
+    
+    //uneccsary on iphone but left in as a cue
+    // /unhide tableview and hide welcomview
+	[UIView animateWithDuration :0.0// snappy
+                       delay				:0.0
+                     options				:UIViewAnimationCurveEaseInOut
+                   animations			:^{
+                       self.tblView.alpha = 1.0;
+                   }
+                   completion			:^(BOOL finished) {}
+     ];
+
+    
   [super viewDidLoad];
 }
 
