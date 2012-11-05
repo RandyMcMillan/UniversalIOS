@@ -8,10 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface UniversalExampleAppDelegate_Pad : NSObject
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) UIWindow				*window;
 @property (strong, nonatomic) UISplitViewController *splitViewController;
 
 @end

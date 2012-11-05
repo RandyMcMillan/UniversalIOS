@@ -10,20 +10,20 @@
 
 @implementation RootViewController_Phone
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-  [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-  
-  DetailViewController_Phone *detail = [[DetailViewController_Phone alloc] init];
-  Model *model                       = [[Model alloc] init];
-  
-  if (indexPath.row == 0) {
-    detail.subcategories = model.firstDetail;
-  } else {
-    detail.subcategories = model.secondDetail;
-  }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[self.tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-  [self.navigationController pushViewController:detail animated:YES]; 
+	DetailViewController_Phone	*detail = [[DetailViewController_Phone alloc] init];
+	Model						*model	= [[Model alloc] init];
+
+	if (indexPath.row == 0) {
+		detail.subcategories = model.firstDetail;
+	} else {
+		detail.subcategories = model.secondDetail;
+	}
+
+	[self.navigationController pushViewController:detail animated:YES];
 }
 
 @end

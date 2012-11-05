@@ -8,74 +8,76 @@
 
 #import "SubDetailViewController.h"
 
-
 @implementation SubDetailViewController
 
 @synthesize tblView;
 @synthesize tblData;
 
+- (void)loadView
+{
+	UIView *mainView = [[UIView alloc] initWithFrame:CGRectZero];
 
-- (void)loadView {
-  
-  UIView *mainView = [[UIView alloc] initWithFrame:CGRectZero];
-  
-  self.tblView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
-  
-  self.tblView.dataSource = self;
-  self.tblView.delegate   = self;
-  
-  self.view = mainView;
-  
-  
-  [self.view addSubview:self.tblView];
-  
-  self.view.autoresizingMask    = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-  self.view.autoresizesSubviews = YES;
+	self.tblView = [[UITableView alloc] initWithFrame:CGRectZero style:UITableViewStylePlain];
+
+	self.tblView.dataSource = self;
+	self.tblView.delegate	= self;
+
+	self.view = mainView;
+
+	[self.view addSubview:self.tblView];
+
+	self.view.autoresizingMask		= UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+	self.view.autoresizesSubviews	= YES;
 }
 
-- (void)viewDidLoad {
-  
-  [super viewDidLoad];
-  
-  self.tblData = [NSArray arrayWithObjects:@"subdetail1 for parent", @"subdetail2 parent", nil];
+- (void)viewDidLoad
+{
+	[super viewDidLoad];
+
+	self.tblData = [NSArray arrayWithObjects:@"subdetail1 for parent", @"subdetail2 parent", nil];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  return YES;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+	return YES;
 }
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
+- (void)didReceiveMemoryWarning
+{
+	[super didReceiveMemoryWarning];
 }
 
-- (void)viewDidUnload {
-  [super viewDidUnload];
+- (void)viewDidUnload
+{
+	[super viewDidUnload];
 }
 
 #pragma mark -
 #pragma mark Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [self.tblData count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return [self.tblData count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-  static NSString *CellIdentifier = @"Cell";
-  
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  
-  if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-  }
-  
-  cell.textLabel.text = [self.tblData objectAtIndex:indexPath.row];
-  
-  return cell;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	static NSString *CellIdentifier = @"Cell";
+
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+	}
+
+	cell.textLabel.text = [self.tblData objectAtIndex:indexPath.row];
+
+	return cell;
 }
 
 @end

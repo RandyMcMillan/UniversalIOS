@@ -8,49 +8,44 @@
 
 #import "DetailViewController_Phone.h"
 
-
 @implementation DetailViewController_Phone
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
+	CGRect tblFrame;
 
-  CGRect tblFrame;
+	/**
+	 *  Hard code values for frames are NOT recommended, but here for breavity sake
+	 */
+	tblFrame = CGRectMake(0, 0, 320, 480);
 
-  /**
-   *  Hard code values for frames are NOT recommended, but here for breavity sake
-   */
-  tblFrame = CGRectMake(0, 0, 320, 480);
-  
-  self.tblView.frame            = tblFrame;
-  self.tblView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+	self.tblView.frame				= tblFrame;
+	self.tblView.autoresizingMask	= UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-    
-    
-    //uneccsary on iphone but left in as a cue
-    // /unhide tableview and hide welcomview
+	// uneccsary on iphone but left in as a cue
+	// /unhide tableview and hide welcomview
 	[UIView animateWithDuration :0.0// snappy
-                       delay				:0.0
-                     options				:UIViewAnimationCurveEaseInOut
-                   animations			:^{
-                       self.tblView.alpha = 1.0;
-                   }
-                   completion			:^(BOOL finished) {}
-     ];
+			delay				:0.0
+			options				:UIViewAnimationCurveEaseInOut
+			animations			:^{
+			self.tblView.alpha = 1.0;
+		}
+			completion			:^(BOOL finished) {}
+	];
 
-    
-  [super viewDidLoad];
+	[super viewDidLoad];
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  return YES;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+	return YES;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	SubDetailViewController_iPhone *subDetail = [[SubDetailViewController_iPhone alloc] init];
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-  
-  SubDetailViewController_iPhone *subDetail = [[SubDetailViewController_iPhone alloc] init];
-  
-  [self.navigationController pushViewController:subDetail animated:YES];
-
+	[self.navigationController pushViewController:subDetail animated:YES];
 }
 
 @end

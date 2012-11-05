@@ -8,13 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface Model : NSObject {
-  NSArray *firstDetail;
-  NSArray *secondDetail;
+	NSArray *firstDetail;
+	NSArray *secondDetail;
 }
 
-@property (nonatomic) NSArray *firstDetail;
-@property (nonatomic) NSArray *secondDetail;
+@property (nonatomic) NSArray	*firstDetail;
+@property (nonatomic) NSArray	*secondDetail;
 
 @end

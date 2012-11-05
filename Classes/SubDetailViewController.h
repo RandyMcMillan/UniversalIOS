@@ -8,10 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-
 @interface SubDetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *tblView;
-@property (nonatomic, copy) NSArray *tblData;
+@property (nonatomic, strong) UITableView	*tblView;
+@property (nonatomic, copy) NSArray			*tblData;
 
 @end

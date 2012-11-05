@@ -8,36 +8,36 @@
 
 #import "SubDetailViewController_iPad.h"
 
-
 @implementation SubDetailViewController_iPad
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
+	CGRect tblFrame;
 
-  CGRect tblFrame;
+	/**
+	 *  Hard code values for frames are NOT recommended, but here for breavity sake
+	 */
+	tblFrame = CGRectMake(0, 0, 320, 480);
 
-  /**
-   *  Hard code values for frames are NOT recommended, but here for breavity sake
-   */
-  tblFrame = CGRectMake(0, 0, 320, 480);
-  
-  self.tblView.frame            = tblFrame;
-  self.tblView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-  
-  self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Dismiss" 
-                                                                            style:UIBarButtonItemStyleBordered              
-                                                                           target:self 
-                                                                           action:@selector(dismissModalViewControllerAnimated:)];
+	self.tblView.frame				= tblFrame;
+	self.tblView.autoresizingMask	= UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
 
-  [super viewDidLoad];
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]	initWithTitle	:@"Dismiss"
+																		style			:UIBarButtonItemStyleBordered
+																		target			:self
+																		action			:@selector(dismissModalViewControllerAnimated:)];
+
+	[super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
+- (void)didReceiveMemoryWarning
+{
+	[super didReceiveMemoryWarning];
 }
 
-- (void)viewDidUnload {
-  [super viewDidUnload];
+- (void)viewDidUnload
+{
+	[super viewDidUnload];
 }
-
 
 @end

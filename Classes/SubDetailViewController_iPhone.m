@@ -8,31 +8,31 @@
 
 #import "SubDetailViewController_iPhone.h"
 
-
 @implementation SubDetailViewController_iPhone
 
-- (void)viewDidLoad {
-  
-  CGRect tblFrame;
+- (void)viewDidLoad
+{
+	CGRect tblFrame;
 
-  /**
-   *  Hard code values for frames are NOT recommended, but here for breavity sake
-   */
-  tblFrame = CGRectMake(0, 0, 320, 480);
-  
-  self.tblView.frame            = tblFrame;
-  self.tblView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-  
-  [super viewDidLoad];
+	/**
+	 *  Hard code values for frames are NOT recommended, but here for breavity sake
+	 */
+	tblFrame = CGRectMake(0, 0, 320, 480);
+
+	self.tblView.frame				= tblFrame;
+	self.tblView.autoresizingMask	= UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+
+	[super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
+- (void)didReceiveMemoryWarning
+{
+	[super didReceiveMemoryWarning];
 }
 
-- (void)viewDidUnload {
-  [super viewDidUnload];
+- (void)viewDidUnload
+{
+	[super viewDidUnload];
 }
-
 
 @end

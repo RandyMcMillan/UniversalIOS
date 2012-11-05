@@ -10,7 +10,7 @@
 #import "DetailViewController.h"
 #import "SubDetailViewController_iPad.h"
 
-@interface DetailViewController_Pad : DetailViewController <UISplitViewControllerDelegate, UIPopoverControllerDelegate> 
+@interface DetailViewController_Pad : DetailViewController <UISplitViewControllerDelegate, UIPopoverControllerDelegate>
 
 @property (nonatomic, strong) UIToolbar *toolbar;
 

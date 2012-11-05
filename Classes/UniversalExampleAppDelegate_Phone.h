@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface UniversalExampleAppDelegate_Phone : NSObject
 
 @property (strong, nonatomic) UIWindow *window;

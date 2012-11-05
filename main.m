@@ -10,14 +10,13 @@
 #import "UniversalExampleAppDelegate_Phone.h"
 #import "UniversalExampleAppDelegate_Pad.h"
 
-int main(int argc, char *argv[]) {
-
-  @autoreleasepool {
-
-    if (IS_IPAD()) {
-      return UIApplicationMain(argc, argv, nil, NSStringFromClass([UniversalExampleAppDelegate_Pad class]));
-    } else {
-      return UIApplicationMain(argc, argv, nil, NSStringFromClass([UniversalExampleAppDelegate_Phone class]));
-    }
-  }
+int main(int argc, char *argv[])
+{
+	@autoreleasepool {
+		if (IS_IPAD()) {
+			return UIApplicationMain(argc, argv, nil, NSStringFromClass([UniversalExampleAppDelegate_Pad class]));
+		} else {
+			return UIApplicationMain(argc, argv, nil, NSStringFromClass([UniversalExampleAppDelegate_Phone class]));
+		}
+	}
 }

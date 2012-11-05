@@ -11,8 +11,8 @@
 
 @interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
-@property (nonatomic, strong) UITableView *tblView;
-@property (nonatomic, copy) NSArray *subcategories;
+@property (nonatomic, strong) UITableView	*tblView;
+@property (nonatomic, copy) NSArray			*subcategories;
 
 - (void)populateTable;
 
