@@ -14,7 +14,8 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
-		4875E067164885AE00A308EF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875E066164885AE00A308EF /* Reachability.m */; };
+		4875E067164885AE00A308EF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875E066164885AE00A308EF /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		4875E0701648866200A308EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4875E06F1648866200A308EF /* SystemConfiguration.framework */; };
 		EA4FED5B120227F6001C3C02 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4FED5A120227F6001C3C02 /* Model.m */; };
 		EA4FF0721201C3AF00C24433 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4FF0711201C3AF00C24433 /* DetailViewController.m */; };
 		EA6FC4301201E1C500CAD858 /* UniversalExampleAppDelegate_Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6FC42F1201E1C500CAD858 /* UniversalExampleAppDelegate_Phone.m */; };
@@ -42,6 +43,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4875E065164885AE00A308EF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4875E066164885AE00A308EF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		4875E06F1648866200A308EF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		4875E0711648871C00A308EF /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* UniversalExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UniversalExample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		EA4FED59120227F6001C3C02 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		EA4FED5A120227F6001C3C02 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
@@ -73,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4875E0701648866200A308EF /* SystemConfiguration.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
@@ -104,6 +108,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				4875E0711648871C00A308EF /* Constants.h */,
 				4875E064164885AE00A308EF /* Reachability */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -137,6 +142,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4875E06F1648866200A308EF /* SystemConfiguration.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
@@ -220,6 +226,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "UniversalExample" */;
 			buildPhases = (
+				4875E06E1648862300A308EF /* Write GitVersion */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
@@ -273,6 +280,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4875E06E1648862300A308EF /* Write GitVersion */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Write GitVersion";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "infoplist=\"$BUILT_PRODUCTS_DIR/$INFOPLIST_PATH\"\ngittag=\"$(cd \"$SRCROOT\" && git describe --always --abbrev=0)\"\nif [[ -n \"$gittag\" ]]; then\ndefaults write \"${infoplist%.plist}\" GitTag \"$gittag\"\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {

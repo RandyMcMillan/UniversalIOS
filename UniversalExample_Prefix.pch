@@ -2,6 +2,8 @@
 // Prefix header for all source files of the 'UniversalExample' target in the 'UniversalExample' project
 //
 #import <Availability.h>
+#import "Reachability.h"
+#import "Constants.h"
 
 #ifndef __IPHONE_3_0
 #warning "This project uses features only available in iPhone SDK 3.0 and later."
