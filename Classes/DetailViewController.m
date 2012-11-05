@@ -19,15 +19,20 @@
 
 - (void)loadView {
 
+    
+    //The view underneath the tableView
   UIView *mainParentView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-  
+    mainParentView.backgroundColor = [UIColor blueColor];
+    
   self.tblView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
   
   self.tblView.dataSource = self;
   self.tblView.delegate   = self;
   
   self.view = mainParentView;
-
+    
+    ///hide the tableView initially to present a welcome view
+    self.tblView.alpha = 0.0;
   
   [self.view addSubview:self.tblView];
 

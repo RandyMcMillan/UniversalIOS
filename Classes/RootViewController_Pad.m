@@ -37,11 +37,29 @@
   
   if (indexPath.row == 0) {
     detailViewController.subcategories = model.firstDetail;
+      
+      
   } else {
     detailViewController.subcategories = model.secondDetail;
+     
+      
   }
+    
+    
 
   [detailViewController populateTable];
+   
+    ///unhide tableview and hide welcomview
+    [UIView animateWithDuration :1.0
+            delay               :0.3
+            options             :UIViewAnimationCurveEaseInOut
+            animations          :^{
+                detailViewController.tblView.alpha = 1.0;
+            }
+            completion          :^(BOOL finished) {}
+     ];
+
+
 }
 
 
