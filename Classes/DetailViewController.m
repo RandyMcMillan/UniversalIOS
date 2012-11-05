@@ -13,105 +13,104 @@
 @synthesize tblView;
 @synthesize subcategories;
 
-
 #pragma mark -
 #pragma mark View lifecycle
 
-- (void)loadView {
+- (void)loadView
+{
+	// The view underneath the tableView
+	UIView *mainParentView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
-    
-    //The view underneath the tableView
-  UIView *mainParentView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    mainParentView.backgroundColor = [UIColor blueColor];
-    
-  self.tblView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
-  
-  self.tblView.dataSource = self;
-  self.tblView.delegate   = self;
-  
-  self.view = mainParentView;
-    
-    ///hide the tableView initially to present a welcome view
-    self.tblView.alpha = 0.0;
-  
-  [self.view addSubview:self.tblView];
+	mainParentView.backgroundColor = [UIColor blueColor];
 
-  self.view.autoresizingMask    = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-  self.view.autoresizesSubviews = YES;
+	self.tblView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
+
+	self.tblView.dataSource = self;
+	self.tblView.delegate	= self;
+
+	self.view = mainParentView;
+
+	// /hide the tableView initially to present a welcome view
+	self.tblView.alpha = 0.0;
+
+	[self.view addSubview:self.tblView];
+
+	self.view.autoresizingMask		= UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+	self.view.autoresizesSubviews	= YES;
 }
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
+	[self populateTable];
 
-  [self populateTable];
-  
-  [super viewDidLoad];
+	[super viewDidLoad];
 }
 
-- (void)viewDidUnload {
-  self.subcategories = nil;
+- (void)viewDidUnload
+{
+	self.subcategories = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-  return YES;
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+	return YES;
 }
 
 #pragma mark -
 #pragma mark Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-  return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+	return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-  return [self.subcategories count];
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+	return [self.subcategories count];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
-  static NSString *CellIdentifier = @"Cell";
-  
-  UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-  
-  if (cell == nil) {
-    cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-  }
-    
-  cell.textLabel.text = [[self.subcategories objectAtIndex:indexPath.row] objectForKey:@"name"];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	static NSString *CellIdentifier = @"Cell";
 
-  return cell;
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+
+	if (cell == nil) {
+		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+	}
+
+	cell.textLabel.text = [[self.subcategories objectAtIndex:indexPath.row] objectForKey:@"name"];
+
+	return cell;
 }
 
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+// - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //  /**
 //   * subclass handles this
 //   */
-//}
+// }
 
 #pragma mark -
 #pragma mark Memory management
 
-- (void)didReceiveMemoryWarning {
+- (void)didReceiveMemoryWarning
+{
+	self.subcategories = nil;
 
-  self.subcategories = nil;
-  
-  [super didReceiveMemoryWarning];
+	[super didReceiveMemoryWarning];
 }
 
-- (void)populateTable {
-  
-  if (self.subcategories == nil) {
+- (void)populateTable
+{
+	if (self.subcategories == nil) {
+		Model *subcats = [[Model alloc] init];
 
-    Model *subcats = [[Model alloc] init];
-    
-    self.subcategories = subcats.firstDetail;
+		self.subcategories = subcats.firstDetail;
 
-    [self.tblView reloadData];
-
-  } else {
-
-    [self.tblView reloadData];
-  }
+		[self.tblView reloadData];
+	} else {
+		[self.tblView reloadData];
+	}
 }
 
 @end
-
