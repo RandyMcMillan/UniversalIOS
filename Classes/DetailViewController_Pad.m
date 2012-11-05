@@ -49,14 +49,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
  
-    
     [self.tblView deselectRowAtIndexPath:indexPath animated:YES];
-
     
-  SubDetailViewController_iPad *subDetail = [[SubDetailViewController_iPad alloc] init];
-  UINavigationController *nav             = [[UINavigationController alloc] initWithRootViewController:subDetail];
-
-    
+    SubDetailViewController_iPad *subDetail = [[SubDetailViewController_iPad alloc] init];
+    UINavigationController *nav             = [[UINavigationController alloc] initWithRootViewController:subDetail];
     
     //Present a full screen modal view
     nav.modalPresentationStyle = UIModalPresentationFullScreen;
