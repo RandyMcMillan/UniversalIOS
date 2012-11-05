@@ -50,8 +50,8 @@
   [detailViewController populateTable];
    
     ///unhide tableview and hide welcomview
-    [UIView animateWithDuration :1.0
-            delay               :0.3
+    [UIView animateWithDuration :0.3//snappy
+            delay               :0.0
             options             :UIViewAnimationCurveEaseInOut
             animations          :^{
                 detailViewController.tblView.alpha = 1.0;
