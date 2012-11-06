@@ -17,6 +17,13 @@
 
 - (void)viewDidLoad
 {
+	NSDictionary	*appInfo	= [[NSBundle mainBundle] infoDictionary];
+	NSString		*versionStr = [NSString stringWithFormat:@"build (%@)", [appInfo objectForKey:@"GitTag"]];
+
+	NSLog(@"--------- versionStr = %@ -----------", versionStr);
+	NSLog(@"--------- versionStr = %@ -----------", versionStr);
+	NSLog(@"--------- versionStr = %@ -----------", versionStr);
+
 	[super viewDidLoad];
 
 	// Observe the kNetworkReachabilityChangedNotification. When that notification is posted, the
