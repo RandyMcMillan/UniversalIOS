@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "MainParentView.h"
 
 @implementation DetailViewController
 
@@ -19,9 +20,10 @@
 - (void)loadView
 {
 	// The view underneath the tableView
-	UIView *mainParentView = [[UIView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
-	mainParentView.backgroundColor = [UIColor colorWithRed:0.612 green:0.620 blue:0.678 alpha:1.000];
+	MainParentView *mainParentView = [[MainParentView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    [mainParentView useInitStyle];
+    
+	//mainParentView.backgroundColor = [UIColor colorWithRed:0.612 green:0.620 blue:0.678 alpha:1.000];
 
 	self.tblView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
 

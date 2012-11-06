@@ -16,6 +16,8 @@
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
 		4875E067164885AE00A308EF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875E066164885AE00A308EF /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4875E0701648866200A308EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4875E06F1648866200A308EF /* SystemConfiguration.framework */; };
+		4875E075164889D200A308EF /* MainParentView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4875E072164889D200A308EF /* MainParentView.bundle */; };
+		4875E076164889D200A308EF /* MainParentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875E074164889D200A308EF /* MainParentView.m */; };
 		EA4FED5B120227F6001C3C02 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4FED5A120227F6001C3C02 /* Model.m */; };
 		EA4FF0721201C3AF00C24433 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4FF0711201C3AF00C24433 /* DetailViewController.m */; };
 		EA6FC4301201E1C500CAD858 /* UniversalExampleAppDelegate_Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6FC42F1201E1C500CAD858 /* UniversalExampleAppDelegate_Phone.m */; };
@@ -45,6 +47,9 @@
 		4875E066164885AE00A308EF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4875E06F1648866200A308EF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		4875E0711648871C00A308EF /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		4875E072164889D200A308EF /* MainParentView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MainParentView.bundle; sourceTree = "<group>"; };
+		4875E073164889D200A308EF /* MainParentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainParentView.h; sourceTree = "<group>"; };
+		4875E074164889D200A308EF /* MainParentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainParentView.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* UniversalExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UniversalExample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		EA4FED59120227F6001C3C02 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		EA4FED5A120227F6001C3C02 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
@@ -215,6 +220,9 @@
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
 				EA4FF0701201C3AF00C24433 /* DetailViewController.h */,
 				EA4FF0711201C3AF00C24433 /* DetailViewController.m */,
+				4875E072164889D200A308EF /* MainParentView.bundle */,
+				4875E073164889D200A308EF /* MainParentView.h */,
+				4875E074164889D200A308EF /* MainParentView.m */,
 			);
 			name = Shared;
 			sourceTree = "<group>";
@@ -276,6 +284,7 @@
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
 				EAD90D551201D346000CBDE8 /* MainWindow-iPad.xib in Resources */,
+				4875E075164889D200A308EF /* MainParentView.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +326,7 @@
 				EAEE698B1207541C0055BE76 /* SubDetailViewController_iPad.m in Sources */,
 				EAEE698E120754320055BE76 /* SubDetailViewController_iPhone.m in Sources */,
 				4875E067164885AE00A308EF /* Reachability.m in Sources */,
+				4875E076164889D200A308EF /* MainParentView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
