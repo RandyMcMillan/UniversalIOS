@@ -9,6 +9,8 @@
 #import "DetailViewController.h"
 #import "MainParentView.h"
 
+#import "WelcomeVC.h"
+
 @implementation DetailViewController
 
 @synthesize tblView;
@@ -23,6 +25,11 @@
     //REF: MainParentView.h/m for custom styling and events 
 	MainParentView *mainParentView = [[MainParentView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [mainParentView useInitStyle];
+    
+    WelcomeVC *welcome = [[WelcomeVC alloc]initWithNibName:@"WelcomeVC" bundle:nil];
+    welcome.view.center = mainParentView.center;
+    //[welcome.view setFrame:CGRectMake(44,44,512,512)];
+    [mainParentView addSubview:welcome.view];
     
 	//mainParentView.backgroundColor = [UIColor colorWithRed:0.612 green:0.620 blue:0.678 alpha:1.000];
 

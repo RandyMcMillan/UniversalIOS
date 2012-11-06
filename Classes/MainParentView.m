@@ -151,6 +151,9 @@
 
 - (void)useInitStyleImage
 {
+    
+    
+    
     // for buttons/whatever
     // [self setImage:[UIImage imageNamed:[[self class] resolveImageResource:@"MainParentView.bundle/image1"]] forState:UIControlStateNormal];
 }
