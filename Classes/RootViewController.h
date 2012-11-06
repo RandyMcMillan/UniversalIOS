@@ -9,5 +9,16 @@
 #import <UIKit/UIKit.h>
 #import "Model.h"
 
+@class Reachability;
+
 @interface RootViewController : UITableViewController
+{
+
+
+    Reachability    *hostReach;
+    Reachability    *internetReach;
+    Reachability    *wifiReach;
+
+
+}
 @end
