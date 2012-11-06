@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>New item - 2</key>
+	<array>
+		<string>Sublabel 1 For First Detail</string>
+		<string>name</string>
+		<string>detailvalue11</string>
+		<string>detail</string>
+	</array>
+	<key>New item</key>
+	<array>
+		<string>Sublabel 1 For First Detail</string>
+		<string>name</string>
+		<string>detailvalue11</string>
+		<string>detail</string>
+	</array>
+</dict>
+</plist>
