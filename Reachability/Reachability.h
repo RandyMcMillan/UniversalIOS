@@ -49,16 +49,16 @@
 #import <SystemConfiguration/SystemConfiguration.h>
 
 typedef enum {
-    NotReachable = 0,
-    ReachableViaWiFi,
-    ReachableViaWWAN
+	NotReachable = 0,
+	ReachableViaWiFi,
+	ReachableViaWWAN
 } NetworkStatus;
 #define kReachabilityChangedNotification @ "kNetworkReachabilityChangedNotification"
 
 @interface Reachability : NSObject
 {
-    BOOL                        localWiFiRef;
-    SCNetworkReachabilityRef    reachabilityRef;
+	BOOL						localWiFiRef;
+	SCNetworkReachabilityRef	reachabilityRef;
 }
 
 // reachabilityWithHostName- Use to check the reachability of a particular host name.
