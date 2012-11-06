@@ -20,6 +20,7 @@
 - (void)loadView
 {
 	// The view underneath the tableView
+    //REF: MainParentView.h/m for custom styling and events 
 	MainParentView *mainParentView = [[MainParentView alloc] initWithFrame:[UIScreen mainScreen].bounds];
     [mainParentView useInitStyle];
     
