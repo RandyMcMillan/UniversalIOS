@@ -37,7 +37,7 @@
 
 	[self.view addSubview:self.toolbar];
 
-	tblFrame = CGRectMake(0, 44, 830, 1024);
+	tblFrame = CGRectMake(0, 44, VIEWBOUNDS.size.width, VIEWBOUNDS.size.height);
 
 	self.tblView.frame = tblFrame;
 
