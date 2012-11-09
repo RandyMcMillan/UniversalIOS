@@ -16,4 +16,8 @@
 
 - (void)populateTable;
 
+- (UITableViewCell *)tableViewCellWithReuseIdentifier:(NSString *)identifier;
+- (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath;
+
+
 @end
