@@ -1,8 +1,8 @@
 #Universal iOS Template
 
-![image](https://raw.github.com/RandyMcMillan/UniversalIOS/master/ScreenShot0.png)
+<center>![image](https://raw.github.com/RandyMcMillan/UniversalIOS/master/ScreenShot0.png)
 ![image](https://raw.github.com/RandyMcMillan/UniversalIOS/master/ScreenShot1.png)
-<br><br><hr><br><br><center>
+<br><br><br><br><center>
 ![image](https://raw.github.com/RandyMcMillan/UniversalIOS/master/ScreenShot2.png)
 ![image](https://raw.github.com/RandyMcMillan/UniversalIOS/master/ScreenShot4.png)
 ![image](https://raw.github.com/RandyMcMillan/UniversalIOS/master/ScreenShot5.png)
