@@ -10,13 +10,14 @@
 #import "MainParentView.h"
 
 #import "WelcomeVC.h"
+#import "Constants.h"
 
 @implementation DetailViewController
 
 @synthesize tblView;
 @synthesize subcategories;
 
-#define ROW_HEIGHT 160
+#define ROW_HEIGHT 80
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -56,9 +57,18 @@
 	[self populateTable];
 
 	[super viewDidLoad];
-    
+   
+    if (IS_IPAD()) {
+        
     self.tblView.rowHeight = ROW_HEIGHT;
+    
+    } else {
+    
+        
+        self.tblView.rowHeight = ROW_HEIGHT;
 
+        
+    }
 }
 
 - (void)viewDidUnload
@@ -95,7 +105,7 @@
 	}
 
 	cell.textLabel.text = [[self.subcategories objectAtIndex:indexPath.row] objectForKey:@"name"];
-    cell.imageView.image = [UIImage imageNamed:@"icon@2x.png"];
+    cell.imageView.image = [UIImage imageNamed:@"icon.png"];
 
 	return cell;
 }

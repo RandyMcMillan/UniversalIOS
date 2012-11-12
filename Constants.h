@@ -5,7 +5,7 @@
 //
 
 #define VIEWBOUNDS  [[UIScreen mainScreen] bounds]
-//#define IS_IPAD     (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPAD     (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
 
 /*
  *
