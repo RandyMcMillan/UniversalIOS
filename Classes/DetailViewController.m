@@ -25,16 +25,17 @@
 - (void)loadView
 {
 	// The view underneath the tableView
-    //REF: MainParentView.h/m for custom styling and events 
+	// REF: MainParentView.h/m for custom styling and events
 	MainParentView *mainParentView = [[MainParentView alloc] initWithFrame:[UIScreen mainScreen].bounds];
-    [mainParentView useInitStyle];
-    
-    WelcomeVC *welcome = [[WelcomeVC alloc]initWithNibName:@"WelcomeVC" bundle:nil];
-    welcome.view.center = mainParentView.center;
-    //[welcome.view setFrame:CGRectMake(44,44,512,512)];
-    [mainParentView addSubview:welcome.view];
-    
-	//mainParentView.backgroundColor = [UIColor colorWithRed:0.612 green:0.620 blue:0.678 alpha:1.000];
+
+	[mainParentView useInitStyle];
+
+	WelcomeVC *welcome = [[WelcomeVC alloc] initWithNibName:@"WelcomeVC" bundle:nil];
+	welcome.view.center = mainParentView.center;
+	// [welcome.view setFrame:CGRectMake(44,44,512,512)];
+	[mainParentView addSubview:welcome.view];
+
+	// mainParentView.backgroundColor = [UIColor colorWithRed:0.612 green:0.620 blue:0.678 alpha:1.000];
 
 	self.tblView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
 
@@ -57,18 +58,12 @@
 	[self populateTable];
 
 	[super viewDidLoad];
-   
-    if (IS_IPAD()) {
-        
-    self.tblView.rowHeight = ROW_HEIGHT;
-    
-    } else {
-    
-        
-        self.tblView.rowHeight = ROW_HEIGHT;
 
-        
-    }
+	if (IS_IPAD()) {
+		self.tblView.rowHeight = ROW_HEIGHT;
+	} else {
+		self.tblView.rowHeight = ROW_HEIGHT;
+	}
 }
 
 - (void)viewDidUnload
@@ -105,106 +100,103 @@
 	}
 
 	cell.textLabel.text = [[self.subcategories objectAtIndex:indexPath.row] objectForKey:@"name"];
-    cell.imageView.image = [UIImage imageNamed:@"icon.png"];
+
+	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage originalSizeImageWithPDFNamed:@"Icon512x512.pdf"]];
+
+	cell.imageView.image = imageView.image;
+	//    cell.imageView.image = [UIImage imageNamed:@"icon.png"];
 
 	return cell;
 }
-
-
-
-
 
 #pragma mark -
 #pragma mark Configuring table view cells
 
-#define NAME_TAG 1
-#define TIME_TAG 2
-#define IMAGE_TAG 3
+#define NAME_TAG				1
+#define TIME_TAG				2
+#define IMAGE_TAG				3
 
-#define LEFT_COLUMN_OFFSET 10.0
-#define LEFT_COLUMN_WIDTH 160.0
+#define LEFT_COLUMN_OFFSET		10.0
+#define LEFT_COLUMN_WIDTH		160.0
 
-#define MIDDLE_COLUMN_OFFSET 170.0
-#define MIDDLE_COLUMN_WIDTH 90.0
+#define MIDDLE_COLUMN_OFFSET	170.0
+#define MIDDLE_COLUMN_WIDTH		90.0
 
-#define RIGHT_COLUMN_OFFSET 280.0
+#define RIGHT_COLUMN_OFFSET		280.0
 
-#define MAIN_FONT_SIZE 18.0
-#define LABEL_HEIGHT 26.0
+#define MAIN_FONT_SIZE			18.0
+#define LABEL_HEIGHT			26.0
 
-#define IMAGE_SIDE 30.0
+#define IMAGE_SIDE				30.0
 
-- (UITableViewCell *)tableViewCellWithReuseIdentifier:(NSString *)identifier {
-	
+- (UITableViewCell *)tableViewCellWithReuseIdentifier:(NSString *)identifier
+{
 	/*
-	 Create an instance of UITableViewCell and add tagged subviews for the name, local time, and quarter image of the time zone.
+	 *   Create an instance of UITableViewCell and add tagged subviews for the name, local time, and quarter image of the time zone.
 	 */
-    
+
 	UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:identifier];
-    
+
 	/*
-	 Create labels for the text fields; set the highlight color so that when the cell is selected it changes appropriately.
-     */
+	 *   Create labels for the text fields; set the highlight color so that when the cell is selected it changes appropriately.
+	 */
 	UILabel *label;
-	CGRect rect;
-	
+	CGRect	rect;
+
 	// Create a label for the time zone name.
-	rect = CGRectMake(LEFT_COLUMN_OFFSET, (ROW_HEIGHT - LABEL_HEIGHT) / 2.0, LEFT_COLUMN_WIDTH, LABEL_HEIGHT);
-	label = [[UILabel alloc] initWithFrame:rect];
-	label.tag = NAME_TAG;
-	label.font = [UIFont boldSystemFontOfSize:MAIN_FONT_SIZE];
+	rect		= CGRectMake(LEFT_COLUMN_OFFSET, (ROW_HEIGHT - LABEL_HEIGHT) / 2.0, LEFT_COLUMN_WIDTH, LABEL_HEIGHT);
+	label		= [[UILabel alloc] initWithFrame:rect];
+	label.tag	= NAME_TAG;
+	label.font	= [UIFont boldSystemFontOfSize:MAIN_FONT_SIZE];
 	label.adjustsFontSizeToFitWidth = YES;
 	[cell.contentView addSubview:label];
 	label.highlightedTextColor = [UIColor whiteColor];
-	
+
 	// Create a label for the time.
-	rect = CGRectMake(MIDDLE_COLUMN_OFFSET, (ROW_HEIGHT - LABEL_HEIGHT) / 2.0, MIDDLE_COLUMN_WIDTH, LABEL_HEIGHT);
-	label = [[UILabel alloc] initWithFrame:rect];
-	label.tag = TIME_TAG;
-	label.font = [UIFont systemFontOfSize:MAIN_FONT_SIZE];
+	rect				= CGRectMake(MIDDLE_COLUMN_OFFSET, (ROW_HEIGHT - LABEL_HEIGHT) / 2.0, MIDDLE_COLUMN_WIDTH, LABEL_HEIGHT);
+	label				= [[UILabel alloc] initWithFrame:rect];
+	label.tag			= TIME_TAG;
+	label.font			= [UIFont systemFontOfSize:MAIN_FONT_SIZE];
 	label.textAlignment = UITextAlignmentRight;
 	[cell.contentView addSubview:label];
 	label.highlightedTextColor = [UIColor whiteColor];
-    
+
 	// Create an image view for the quarter image.
 	rect = CGRectMake(RIGHT_COLUMN_OFFSET, (ROW_HEIGHT - IMAGE_SIDE) / 2.0, IMAGE_SIDE, IMAGE_SIDE);
-    
+
 	UIImageView *imageView = [[UIImageView alloc] initWithFrame:rect];
 	imageView.tag = IMAGE_TAG;
 	[cell.contentView addSubview:imageView];
-	
+
 	return cell;
 }
 
-
-- (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    
-    /*
-	 Cache the formatter. Normally you would use one of the date formatter styles (such as NSDateFormatterShortStyle), but here we want a specific format that excludes seconds.
+- (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath
+{
+	/*
+	 *   Cache the formatter. Normally you would use one of the date formatter styles (such as NSDateFormatterShortStyle), but here we want a specific format that excludes seconds.
 	 */
 	static NSDateFormatter *dateFormatter = nil;
+
 	if (dateFormatter == nil) {
 		dateFormatter = [[NSDateFormatter alloc] init];
 		[dateFormatter setDateFormat:@"h:mm a"];
 	}
-	
-	
+
 	UILabel *label;
-	
+
 	// Set the locale name.
-	label = (UILabel *)[cell viewWithTag:NAME_TAG];
-	label.text = @"label.text";
-	
+	label		= (UILabel *)[cell viewWithTag:NAME_TAG];
+	label.text	= @"label.text";
+
 	// Set the time.
-	label = (UILabel *)[cell viewWithTag:TIME_TAG];
-	label.text = [dateFormatter stringFromDate:[NSDate date]];
-	
+	label		= (UILabel *)[cell viewWithTag:TIME_TAG];
+	label.text	= [dateFormatter stringFromDate:[NSDate date]];
+
 	// Set the image.
 	UIImageView *imageView = (UIImageView *)[cell viewWithTag:IMAGE_TAG];
 	imageView.image = nil;
-}    
-
-
+}
 
 // - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 //  /**

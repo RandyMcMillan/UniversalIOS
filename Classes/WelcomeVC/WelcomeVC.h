@@ -10,6 +10,7 @@
 
 #import "UIImage+PDF.h"
 
-@interface WelcomeVC : UIViewController
+@interface WelcomeVC : UIViewController {}
+
 
 @end
