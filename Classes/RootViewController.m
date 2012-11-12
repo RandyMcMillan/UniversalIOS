@@ -133,23 +133,41 @@
 
 	cell.textLabel.text = (indexPath.row) == 0 ? @"First Detail" : @"Second Detail";
 
-    float kInset = 4;
+  
+    
+    /* Draw a growing line of buttons to demonstate the scaling
+	 */
+	float kInset = 4;
 	float kSpacing = 10;
 	float buttonY = kSpacing;
- 
-    CGSize imageSize = CGSizeMake( cell.contentView.frame.size.width - kInset * 2, cell.contentView.frame.size.height - kInset * 2 );
     
-    /* Set the button image from the PDF asset.
-     */
-    // [ cell.imageView setImage:[ UIImage imageWithPDFNamed:@"YingYang.pdf" atSize:imageSize ] forState:UIControlStateNormal ];
+	for( float i = 0; i < 1; i++ )
+	{
+		/* Always round up coordinates before passing them into UIKit
+		 */
+		float buttonWidth = ceilf( 22 * sqrtf( i + 1 ));
+		
+		CGSize buttonSize = CGSizeMake( buttonWidth, buttonWidth );
+		UIButton *yingYangButton = [ UIButton buttonWithType:UIButtonTypeRoundedRect ];
+		yingYangButton.frame = CGRectMake( kSpacing, buttonY, buttonSize.width, buttonSize.height );
+		
+		/* Inset the button image
+		 */
+		CGSize imageSize = CGSizeMake( buttonSize.width - kInset * 2, buttonSize.height - kInset * 2 );
+		
+		/* Set the button image from the PDF asset.
+		 */
+        [ yingYangButton setImage:[ UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize ] forState:UIControlStateNormal ];
+        
+        [ self.view addSubview:yingYangButton ];
+		
+		buttonY += buttonWidth + kSpacing;
+	}
 
     
-    UIImageView *imageView = [[ UIImageView alloc ] initWithImage:[ UIImage originalSizeImageWithPDFNamed:@"Icon512x512.pdf"  ]];
-    //    imageView.center = self.view.center;
-    //[ self.view addSubview:imageView ];
-
+    
     //cell.imageView.image = [UIImage imageNamed:@"icon.png"];
-    cell.imageView.image = imageView.image;
+    // cell.imageView.image = imageView.image;
     //[ imageView release ];
 
 	return cell;
