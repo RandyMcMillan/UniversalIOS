@@ -119,6 +119,29 @@
 	return 2;
 }
 
+
+#pragma mark -
+#pragma mark Configuring table view cells
+
+#define NAME_TAG 1
+#define TIME_TAG 2
+#define IMAGE_TAG 3
+
+#define LEFT_COLUMN_OFFSET 70.0
+#define LEFT_COLUMN_WIDTH 160.0
+
+#define MIDDLE_COLUMN_OFFSET 170.0
+#define MIDDLE_COLUMN_WIDTH 90.0
+
+#define RIGHT_COLUMN_OFFSET 280.0
+
+#define MAIN_FONT_SIZE 20.0
+#define LABEL_HEIGHT 20.0
+
+#define IMAGE_SIDE 30.0
+
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 	static NSString *CellIdentifier = @"Cell";
@@ -128,9 +151,36 @@
 	if (cell == nil) {
 		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
 	}
+  
+	/*
+	 Create labels for the text fields; set the highlight color so that when the cell is selected it changes appropriately.
+     */
+
+	UILabel *label;
+	CGRect rect;
+	
+	// Create a label for the time zone name.
+	
+    //rect = CGRectMake(LEFT_COLUMN_OFFSET, (ROW_HEIGHT - LABEL_HEIGHT) / 2.0, LEFT_COLUMN_WIDTH, LABEL_HEIGHT);
+	rect = CGRectMake(LEFT_COLUMN_OFFSET, ROW_HEIGHT/4, LEFT_COLUMN_WIDTH, LABEL_HEIGHT);
+    label = [[UILabel alloc] initWithFrame:rect];
+	label.tag = NAME_TAG;
+	label.font = [UIFont boldSystemFontOfSize:MAIN_FONT_SIZE];
+	label.adjustsFontSizeToFitWidth = YES;
+	//[cell.contentView addSubview:label];
+	label.textColor = [UIColor redColor];
+    label.backgroundColor = [UIColor clearColor];
+    //label.highlightedTextColor = [UIColor whiteColor];
+	//[label release];
+	   
+    
+    //cell.imageView.image = [UIImage imageNamed:@"icon.png"];
+    // cell.imageView.image = imageView.image;
+    //[ imageView release ];
+
 
 	cell.textLabel.text = @"Root";
-
+    label.text = cell.textLabel.text;
 	cell.textLabel.text = (indexPath.row) == 0 ? @"First Detail" : @"Second Detail";
 
   
@@ -149,7 +199,7 @@
 		
 		CGSize buttonSize = CGSizeMake( buttonWidth+40, buttonWidth+40 );
 		UIButton *yingYangButton = [ UIButton buttonWithType:UIButtonTypeRoundedRect ];
-		yingYangButton.enabled = FALSE;
+		yingYangButton.enabled = FALSE;//allow touch events to pass thru
         yingYangButton.frame = CGRectMake( kSpacing, buttonY, buttonSize.width, buttonSize.height );
 		
 		/* Inset the button image
@@ -160,18 +210,21 @@
 		 */
         [ yingYangButton setImage:[ UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize ] forState:UIControlStateNormal ];
         
+        [yingYangButton addSubview:label];
         //[ self.view addSubview:yingYangButton ];
 		[cell.contentView addSubview:yingYangButton];
 		buttonY += buttonWidth + kSpacing;
 
 	}
-
     
-    //cell.imageView.image = [UIImage imageNamed:@"icon.png"];
-    // cell.imageView.image = imageView.image;
-    //[ imageView release ];
+    
+    
+    cell.textLabel.textColor = [UIColor colorWithRed:0.122 green:0.129 blue:0.161 alpha:0.100];
+   
+    label.textColor = [UIColor redColor];
+    label.text = cell.textLabel.text;
 
-	return cell;
+ 	return cell;
 }
 
 #pragma mark -
