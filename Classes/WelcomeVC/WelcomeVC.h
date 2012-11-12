@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "UIImage+PDF.h"
+
 @interface WelcomeVC : UIViewController
 
 @end

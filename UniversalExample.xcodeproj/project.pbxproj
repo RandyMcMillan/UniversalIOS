@@ -15,6 +15,11 @@
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
 		4832CA831648FCC200B124F5 /* Model.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4832CA821648FCC200B124F5 /* Model.plist */; };
+		487515A0165191560022CB5F /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 48751599165191560022CB5F /* NSString+MD5.m */; };
+		487515A1165191560022CB5F /* PDFView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875159B165191560022CB5F /* PDFView.m */; };
+		487515A2165191560022CB5F /* UIImage+PDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875159D165191560022CB5F /* UIImage+PDF.m */; };
+		487515A3165191560022CB5F /* UIView+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875159F165191560022CB5F /* UIView+Image.m */; };
+		487515A9165192A70022CB5F /* Icon512x512.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 487515A8165192A70022CB5F /* Icon512x512.pdf */; };
 		4875E067164885AE00A308EF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875E066164885AE00A308EF /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4875E0701648866200A308EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4875E06F1648866200A308EF /* SystemConfiguration.framework */; };
 		4875E076164889D200A308EF /* MainParentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875E074164889D200A308EF /* MainParentView.m */; };
@@ -51,6 +56,15 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4832CA821648FCC200B124F5 /* Model.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Model.plist; sourceTree = "<group>"; };
+		48751598165191560022CB5F /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		48751599165191560022CB5F /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		4875159A165191560022CB5F /* PDFView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFView.h; sourceTree = "<group>"; };
+		4875159B165191560022CB5F /* PDFView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFView.m; sourceTree = "<group>"; };
+		4875159C165191560022CB5F /* UIImage+PDF.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+PDF.h"; sourceTree = "<group>"; };
+		4875159D165191560022CB5F /* UIImage+PDF.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+PDF.m"; sourceTree = "<group>"; };
+		4875159E165191560022CB5F /* UIView+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Image.h"; sourceTree = "<group>"; };
+		4875159F165191560022CB5F /* UIView+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Image.m"; sourceTree = "<group>"; };
+		487515A8165192A70022CB5F /* Icon512x512.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Icon512x512.pdf; sourceTree = SOURCE_ROOT; };
 		4875E065164885AE00A308EF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4875E066164885AE00A308EF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4875E06F1648866200A308EF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -128,6 +142,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				48751597165191560022CB5F /* UIImage+PDF */,
 				489F735816516F5F00418108 /* Icon-72@2x.png */,
 				489F735616516F5B00418108 /* Icon-72.png */,
 				489F735416516F5400418108 /* Icon@2x.png */,
@@ -172,6 +187,22 @@
 				2892E40F0DC94CBA00A64D0F /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		48751597165191560022CB5F /* UIImage+PDF */ = {
+			isa = PBXGroup;
+			children = (
+				487515A8165192A70022CB5F /* Icon512x512.pdf */,
+				48751598165191560022CB5F /* NSString+MD5.h */,
+				48751599165191560022CB5F /* NSString+MD5.m */,
+				4875159A165191560022CB5F /* PDFView.h */,
+				4875159B165191560022CB5F /* PDFView.m */,
+				4875159C165191560022CB5F /* UIImage+PDF.h */,
+				4875159D165191560022CB5F /* UIImage+PDF.m */,
+				4875159E165191560022CB5F /* UIView+Image.h */,
+				4875159F165191560022CB5F /* UIView+Image.m */,
+			);
+			path = "UIImage+PDF";
 			sourceTree = "<group>";
 		};
 		4875E064164885AE00A308EF /* Reachability */ = {
@@ -314,6 +345,7 @@
 				489F735516516F5400418108 /* Icon@2x.png in Resources */,
 				489F735716516F5B00418108 /* Icon-72.png in Resources */,
 				489F735916516F5F00418108 /* Icon-72@2x.png in Resources */,
+				487515A9165192A70022CB5F /* Icon512x512.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +389,10 @@
 				4875E067164885AE00A308EF /* Reachability.m in Sources */,
 				4875E076164889D200A308EF /* MainParentView.m in Sources */,
 				4875E08516489B0F00A308EF /* WelcomeVC.m in Sources */,
+				487515A0165191560022CB5F /* NSString+MD5.m in Sources */,
+				487515A1165191560022CB5F /* PDFView.m in Sources */,
+				487515A2165191560022CB5F /* UIImage+PDF.m in Sources */,
+				487515A3165191560022CB5F /* UIView+Image.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -406,11 +442,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Randy McMillan (PHTM25SWUN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Randy McMillan (PHTM25SWUN)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PROVISIONING_PROFILE = "2C3CABDC-6ECD-41BD-81D2-933C98D408E1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2C3CABDC-6ECD-41BD-81D2-933C98D408E1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -420,12 +459,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Randy McMillan (PHTM25SWUN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Randy McMillan (PHTM25SWUN)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "2C3CABDC-6ECD-41BD-81D2-933C98D408E1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2C3CABDC-6ECD-41BD-81D2-933C98D408E1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -435,12 +477,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Randy McMillan (PHTM25SWUN)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Randy McMillan (PHTM25SWUN)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				PROVISIONING_PROFILE = "2C3CABDC-6ECD-41BD-81D2-933C98D408E1";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2C3CABDC-6ECD-41BD-81D2-933C98D408E1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

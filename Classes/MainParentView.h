@@ -23,6 +23,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import <CoreGraphics/CoreGraphics.h>
 
+#import "UIImage+PDF.h"
+
 @interface MainParentView : UIView // Subclass buttons/navbars/etc
 {
     // These two arrays define the gradient that will be used

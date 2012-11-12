@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Model.h"
 
+#import "UIImage+PDF.h"
+
 @interface DetailViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView	*tblView;

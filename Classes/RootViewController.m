@@ -132,7 +132,25 @@
 	cell.textLabel.text = @"Root";
 
 	cell.textLabel.text = (indexPath.row) == 0 ? @"First Detail" : @"Second Detail";
-    cell.imageView.image = [UIImage imageNamed:@"icon.png"];
+
+    float kInset = 4;
+	float kSpacing = 10;
+	float buttonY = kSpacing;
+ 
+    CGSize imageSize = CGSizeMake( cell.contentView.frame.size.width - kInset * 2, cell.contentView.frame.size.height - kInset * 2 );
+    
+    /* Set the button image from the PDF asset.
+     */
+    // [ cell.imageView setImage:[ UIImage imageWithPDFNamed:@"YingYang.pdf" atSize:imageSize ] forState:UIControlStateNormal ];
+
+    
+    UIImageView *imageView = [[ UIImageView alloc ] initWithImage:[ UIImage originalSizeImageWithPDFNamed:@"Icon512x512.pdf"  ]];
+    //    imageView.center = self.view.center;
+    //[ self.view addSubview:imageView ];
+
+    //cell.imageView.image = [UIImage imageNamed:@"icon.png"];
+    cell.imageView.image = imageView.image;
+    //[ imageView release ];
 
 	return cell;
 }
