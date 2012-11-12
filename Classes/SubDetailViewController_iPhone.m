@@ -25,6 +25,11 @@
 	[super viewDidLoad];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+	[self.tblView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
 - (void)didReceiveMemoryWarning
 {
 	[super didReceiveMemoryWarning];
