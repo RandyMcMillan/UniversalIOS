@@ -21,6 +21,10 @@
 		4875E08516489B0F00A308EF /* WelcomeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875E08316489B0F00A308EF /* WelcomeVC.m */; };
 		4875E08616489B0F00A308EF /* WelcomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4875E08416489B0F00A308EF /* WelcomeVC.xib */; };
 		4875E08916489BC800A308EF /* MainParentView.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 4875E08816489BC800A308EF /* MainParentView.bundle */; };
+		489F735216516F5100418108 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 489F735116516F5100418108 /* Icon.png */; };
+		489F735516516F5400418108 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 489F735416516F5400418108 /* Icon@2x.png */; };
+		489F735716516F5B00418108 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 489F735616516F5B00418108 /* Icon-72.png */; };
+		489F735916516F5F00418108 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 489F735816516F5F00418108 /* Icon-72@2x.png */; };
 		EA4FED5B120227F6001C3C02 /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4FED5A120227F6001C3C02 /* Model.m */; };
 		EA4FF0721201C3AF00C24433 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA4FF0711201C3AF00C24433 /* DetailViewController.m */; };
 		EA6FC4301201E1C500CAD858 /* UniversalExampleAppDelegate_Phone.m in Sources */ = {isa = PBXBuildFile; fileRef = EA6FC42F1201E1C500CAD858 /* UniversalExampleAppDelegate_Phone.m */; };
@@ -57,6 +61,10 @@
 		4875E08316489B0F00A308EF /* WelcomeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WelcomeVC.m; path = WelcomeVC/WelcomeVC.m; sourceTree = "<group>"; };
 		4875E08416489B0F00A308EF /* WelcomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WelcomeVC.xib; path = WelcomeVC/WelcomeVC.xib; sourceTree = "<group>"; };
 		4875E08816489BC800A308EF /* MainParentView.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MainParentView.bundle; sourceTree = "<group>"; };
+		489F735116516F5100418108 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		489F735416516F5400418108 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		489F735616516F5B00418108 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
+		489F735816516F5F00418108 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* UniversalExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "UniversalExample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		EA4FED59120227F6001C3C02 /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		EA4FED5A120227F6001C3C02 /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
@@ -120,6 +128,10 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				489F735816516F5F00418108 /* Icon-72@2x.png */,
+				489F735616516F5B00418108 /* Icon-72.png */,
+				489F735416516F5400418108 /* Icon@2x.png */,
+				489F735116516F5100418108 /* Icon.png */,
 				4875E0711648871C00A308EF /* Constants.h */,
 				4875E064164885AE00A308EF /* Reachability */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -298,6 +310,10 @@
 				4875E08616489B0F00A308EF /* WelcomeVC.xib in Resources */,
 				4875E08916489BC800A308EF /* MainParentView.bundle in Resources */,
 				4832CA831648FCC200B124F5 /* Model.plist in Resources */,
+				489F735216516F5100418108 /* Icon.png in Resources */,
+				489F735516516F5400418108 /* Icon@2x.png in Resources */,
+				489F735716516F5B00418108 /* Icon-72.png in Resources */,
+				489F735916516F5F00418108 /* Icon-72@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

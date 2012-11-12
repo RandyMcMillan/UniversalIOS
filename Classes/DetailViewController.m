@@ -95,6 +95,7 @@
 	}
 
 	cell.textLabel.text = [[self.subcategories objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.imageView.image = [UIImage imageNamed:@"icon@2x.png"];
 
 	return cell;
 }

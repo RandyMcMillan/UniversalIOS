@@ -17,6 +17,10 @@
 
 - (void)viewDidLoad
 {
+   
+#define ROW_HEIGHT 80
+    self.tableView.rowHeight = ROW_HEIGHT;
+
 	NSDictionary	*appInfo	= [[NSBundle mainBundle] infoDictionary];
 	NSString		*versionStr = [NSString stringWithFormat:@"build (%@)", [appInfo objectForKey:@"GitTag"]];
 
@@ -128,6 +132,7 @@
 	cell.textLabel.text = @"Root";
 
 	cell.textLabel.text = (indexPath.row) == 0 ? @"First Detail" : @"Second Detail";
+    cell.imageView.image = [UIImage imageNamed:@"icon.png"];
 
 	return cell;
 }
