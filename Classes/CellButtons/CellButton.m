@@ -143,8 +143,8 @@
         nil];
 
     self.cornerRadius   = 5.0f;
-    self.strokeColor    = [UIColor darkGrayColor];
-    self.strokeWeight   = 0.1f;
+    self.strokeColor    = [UIColor clearColor];
+    self.strokeWeight   = 0.0f;
     [self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateNormal];         // For NavBars//Buttons//etc
     [self setTitleColor:[UIColor darkGrayColor] forState:UIControlStateHighlighted];    // For NavBars//Buttons//etc
 }                                                                                       /* useInitStyle */
