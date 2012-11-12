@@ -147,9 +147,10 @@
 		 */
 		float buttonWidth = ceilf( 22 * sqrtf( i + 1 ));
 		
-		CGSize buttonSize = CGSizeMake( buttonWidth, buttonWidth );
+		CGSize buttonSize = CGSizeMake( buttonWidth+40, buttonWidth+40 );
 		UIButton *yingYangButton = [ UIButton buttonWithType:UIButtonTypeRoundedRect ];
-		yingYangButton.frame = CGRectMake( kSpacing, buttonY, buttonSize.width, buttonSize.height );
+		yingYangButton.enabled = FALSE;
+        yingYangButton.frame = CGRectMake( kSpacing, buttonY, buttonSize.width, buttonSize.height );
 		
 		/* Inset the button image
 		 */
@@ -159,12 +160,12 @@
 		 */
         [ yingYangButton setImage:[ UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize ] forState:UIControlStateNormal ];
         
-        [ self.view addSubview:yingYangButton ];
-		
+        //[ self.view addSubview:yingYangButton ];
+		[cell.contentView addSubview:yingYangButton];
 		buttonY += buttonWidth + kSpacing;
+
 	}
 
-    
     
     //cell.imageView.image = [UIImage imageNamed:@"icon.png"];
     // cell.imageView.image = imageView.image;
