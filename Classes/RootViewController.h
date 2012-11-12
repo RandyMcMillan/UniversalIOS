@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "Model.h"
-
 #import "UIImage+PDF.h"
 
 @class Reachability;
+@class CellButton;
 
 @interface RootViewController : UITableViewController
 {

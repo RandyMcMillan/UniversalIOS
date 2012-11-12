@@ -8,6 +8,7 @@
 
 #import "RootViewController.h"
 #import "Reachability.h"
+#import  "CellButton.h"
 
 @interface RootViewController () {}
 
@@ -167,23 +168,16 @@
 	label.tag = NAME_TAG;
 	label.font = [UIFont boldSystemFontOfSize:MAIN_FONT_SIZE];
 	label.adjustsFontSizeToFitWidth = YES;
-	//[cell.contentView addSubview:label];
-	label.textColor = [UIColor redColor];
     label.backgroundColor = [UIColor clearColor];
-    //label.highlightedTextColor = [UIColor whiteColor];
 	//[label release];
-	   
     
     //cell.imageView.image = [UIImage imageNamed:@"icon.png"];
     // cell.imageView.image = imageView.image;
     //[ imageView release ];
 
-
 	cell.textLabel.text = @"Root";
     label.text = cell.textLabel.text;
 	cell.textLabel.text = (indexPath.row) == 0 ? @"First Detail" : @"Second Detail";
-
-  
     
     /* Draw a growing line of buttons to demonstate the scaling
 	 */
@@ -198,7 +192,8 @@
 		float buttonWidth = ceilf( 22 * sqrtf( i + 1 ));
 		
 		CGSize buttonSize = CGSizeMake( buttonWidth+40, buttonWidth+40 );
-		UIButton *yingYangButton = [ UIButton buttonWithType:UIButtonTypeRoundedRect ];
+		CellButton *yingYangButton = [ CellButton buttonWithType:UIButtonTypeCustom ];
+        [yingYangButton useInitStyle];
 		yingYangButton.enabled = FALSE;//allow touch events to pass thru
         yingYangButton.frame = CGRectMake( kSpacing, buttonY, buttonSize.width, buttonSize.height );
 		
@@ -217,13 +212,11 @@
 
 	}
     
-    
-    
-    cell.textLabel.textColor = [UIColor colorWithRed:0.122 green:0.129 blue:0.161 alpha:0.100];
-   
-    label.textColor = [UIColor redColor];
+    //cell.textLabel.textColor = [UIColor colorWithRed:0.122 green:0.129 blue:0.161 alpha:0.000];
+    //label.textColor = [UIColor blackColor];
+    //label.highlightedTextColor = [UIColor whiteColor];
     label.text = cell.textLabel.text;
-
+    cell.textLabel.text = nil;
  	return cell;
 }
 

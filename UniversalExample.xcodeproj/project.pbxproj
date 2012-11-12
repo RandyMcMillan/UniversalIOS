@@ -20,6 +20,8 @@
 		487515A2165191560022CB5F /* UIImage+PDF.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875159D165191560022CB5F /* UIImage+PDF.m */; };
 		487515A3165191560022CB5F /* UIView+Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875159F165191560022CB5F /* UIView+Image.m */; };
 		487515A9165192A70022CB5F /* Icon512x512.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 487515A8165192A70022CB5F /* Icon512x512.pdf */; };
+		487515BD1651B10C0022CB5F /* CellButton.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 487515BA1651B10B0022CB5F /* CellButton.bundle */; };
+		487515BE1651B10C0022CB5F /* CellButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 487515BC1651B10C0022CB5F /* CellButton.m */; };
 		4875E067164885AE00A308EF /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875E066164885AE00A308EF /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		4875E0701648866200A308EF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4875E06F1648866200A308EF /* SystemConfiguration.framework */; };
 		4875E076164889D200A308EF /* MainParentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4875E074164889D200A308EF /* MainParentView.m */; };
@@ -65,6 +67,9 @@
 		4875159E165191560022CB5F /* UIView+Image.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Image.h"; sourceTree = "<group>"; };
 		4875159F165191560022CB5F /* UIView+Image.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Image.m"; sourceTree = "<group>"; };
 		487515A8165192A70022CB5F /* Icon512x512.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = Icon512x512.pdf; sourceTree = SOURCE_ROOT; };
+		487515BA1651B10B0022CB5F /* CellButton.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CellButton.bundle; path = CellButtons/CellButton.bundle; sourceTree = "<group>"; };
+		487515BB1651B10C0022CB5F /* CellButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CellButton.h; path = CellButtons/CellButton.h; sourceTree = "<group>"; };
+		487515BC1651B10C0022CB5F /* CellButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CellButton.m; path = CellButtons/CellButton.m; sourceTree = "<group>"; };
 		4875E065164885AE00A308EF /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		4875E066164885AE00A308EF /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		4875E06F1648866200A308EF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -269,6 +274,9 @@
 				EAEE698712074FE90055BE76 /* SubDetailViewController.m */,
 				28C286DF0D94DF7D0034E888 /* RootViewController.h */,
 				28C286E00D94DF7D0034E888 /* RootViewController.m */,
+				487515BA1651B10B0022CB5F /* CellButton.bundle */,
+				487515BB1651B10C0022CB5F /* CellButton.h */,
+				487515BC1651B10C0022CB5F /* CellButton.m */,
 				EA4FF0701201C3AF00C24433 /* DetailViewController.h */,
 				EA4FF0711201C3AF00C24433 /* DetailViewController.m */,
 				4875E08216489B0F00A308EF /* WelcomeVC.h */,
@@ -346,6 +354,7 @@
 				489F735716516F5B00418108 /* Icon-72.png in Resources */,
 				489F735916516F5F00418108 /* Icon-72@2x.png in Resources */,
 				487515A9165192A70022CB5F /* Icon512x512.pdf in Resources */,
+				487515BD1651B10C0022CB5F /* CellButton.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +402,7 @@
 				487515A1165191560022CB5F /* PDFView.m in Sources */,
 				487515A2165191560022CB5F /* UIImage+PDF.m in Sources */,
 				487515A3165191560022CB5F /* UIView+Image.m in Sources */,
+				487515BE1651B10C0022CB5F /* CellButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
