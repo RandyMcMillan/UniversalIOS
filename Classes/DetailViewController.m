@@ -17,7 +17,7 @@
 @synthesize tblView;
 @synthesize subcategories;
 
-#define ROW_HEIGHT 80
+#define ROW_HEIGHT 180
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -101,10 +101,56 @@
 
 	cell.textLabel.text = [[self.subcategories objectAtIndex:indexPath.row] objectForKey:@"name"];
 
+    
+    
+    /* Draw a growing line of buttons to demonstate the scaling
+	 */
+	float kInset = 4;
+	float kSpacing = 10;
+	float buttonY = kSpacing;
+    
+	for( float i = 0; i < 1; i++ )
+	{
+		/* Always round up coordinates before passing them into UIKit
+		 */
+		float imageWidth = ceilf( 22 * sqrtf( i + 1 ));
+		
+		CGSize imageSize1 = CGSizeMake( imageWidth+140, imageWidth+140 );
+        //yingYangButton.frame = CGRectMake( kSpacing, buttonY, imageSize1.width, imageSize1.height );
+		
+		/* Inset the button image
+		 */
+		CGSize imageSize2 = CGSizeMake( imageSize1.width - kInset * 2, imageSize1.height - kInset * 2 );
+		
+		/* Set the button image from the PDF asset.
+		 */
+        
+        //[ self.view addSubview:yingYangButton ];
+		//[cell.contentView addSubview:yingYangButton];
+		buttonY += imageWidth + kSpacing;
+       
+        
+        cell.imageView.image = [ UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize2 ] ;
+
+	}
+
+    
+    
+    
+    
+   /*
 	UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage originalSizeImageWithPDFNamed:@"Icon512x512.pdf"]];
 
 	cell.imageView.image = imageView.image;
-	//    cell.imageView.image = [UIImage imageNamed:@"icon.png"];
+	*/
+    //cell.imageView.image = [ UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize2 ] forState:UIControlStateNormal ];
+    
+    
+    
+    
+    
+    
+    //    cell.imageView.image = [UIImage imageNamed:@"icon.png"];
 
 	return cell;
 }
