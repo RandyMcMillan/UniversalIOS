@@ -48,10 +48,10 @@
 	self.tblView.alpha = 0.0;
 
 	if (IS_IPAD()) {
-        self.tblView.rowHeight = ROW_HEIGHT;
-    } else {
-        self.tblView.rowHeight = ROW_HEIGHT;
-    }
+		self.tblView.rowHeight = ROW_HEIGHT;
+	} else {
+		self.tblView.rowHeight = ROW_HEIGHT;
+	}
 
 	[self.view addSubview:self.tblView];
 
