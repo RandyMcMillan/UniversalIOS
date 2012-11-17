@@ -17,7 +17,7 @@
 @synthesize tblView;
 @synthesize subcategories;
 
-#define ROW_HEIGHT 180
+#define ROW_HEIGHT 276
 
 #pragma mark -
 #pragma mark View lifecycle
@@ -48,7 +48,7 @@
 	self.tblView.alpha = 0.0;
 
 	if (IS_IPAD()) {
-		self.tblView.rowHeight = ROW_HEIGHT;
+		self.tblView.rowHeight = ROW_HEIGHT+80;
 	} else {
 		self.tblView.rowHeight = ROW_HEIGHT;
 	}
@@ -113,7 +113,6 @@
 		float imageWidth = ceilf(22 * sqrtf(i + 1));
 
 		CGSize imageSize1 = CGSizeMake(imageWidth + 140, imageWidth + 140);
-		// yingYangButton.frame = CGRectMake( kSpacing, buttonY, imageSize1.width, imageSize1.height );
 
 		/* Inset the button image
 		 */
@@ -122,19 +121,10 @@
 		/* Set the button image from the PDF asset.
 		 */
 
-		// [ self.view addSubview:yingYangButton ];
-		// [cell.contentView addSubview:yingYangButton];
 		buttonY += imageWidth + kSpacing;
 
 		cell.imageView.image = [UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize2];
 	}
-
-	/*
-	 *   UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage originalSizeImageWithPDFNamed:@"Icon512x512.pdf"]];
-	 *
-	 *   cell.imageView.image = imageView.image;
-	 */
-	// cell.imageView.image = [ UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize2 ] forState:UIControlStateNormal ];
 
 	//    cell.imageView.image = [UIImage imageNamed:@"icon.png"];
 
