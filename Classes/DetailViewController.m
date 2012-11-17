@@ -24,56 +24,56 @@
 
 - (void)loadView
 {
-	// The view underneath the tableView
-	// REF: MainParentView.h/m for custom styling and events
-	MainParentView *mainParentView = [[MainParentView alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    // The view underneath the tableView
+    // REF: MainParentView.h/m for custom styling and events
+    MainParentView *mainParentView = [[MainParentView alloc] initWithFrame:[UIScreen mainScreen].bounds];
 
-	[mainParentView useInitStyle];
+    [mainParentView useInitStyle];
 
-	WelcomeVC *welcome = [[WelcomeVC alloc] initWithNibName:@"WelcomeVC" bundle:nil];
-	welcome.view.center = mainParentView.center;
-	// [welcome.view setFrame:CGRectMake(44,44,512,512)];
-	[mainParentView addSubview:welcome.view];
+    WelcomeVC *welcome = [[WelcomeVC alloc] initWithNibName:@"WelcomeVC" bundle:nil];
+    welcome.view.center = mainParentView.center;
+    // [welcome.view setFrame:CGRectMake(44,44,512,512)];
+    [mainParentView addSubview:welcome.view];
 
-	// mainParentView.backgroundColor = [UIColor colorWithRed:0.612 green:0.620 blue:0.678 alpha:1.000];
+    // mainParentView.backgroundColor = [UIColor colorWithRed:0.612 green:0.620 blue:0.678 alpha:1.000];
 
-	self.tblView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
+    self.tblView = [[UITableView alloc] initWithFrame:[UIScreen mainScreen].bounds style:UITableViewStylePlain];
 
-	self.tblView.dataSource = self;
-	self.tblView.delegate	= self;
+    self.tblView.dataSource = self;
+    self.tblView.delegate	= self;
 
-	self.view = mainParentView;
+    self.view = mainParentView;
 
-	// /hide the tableView initially to present a welcome view
-	self.tblView.alpha = 0.0;
+    // /hide the tableView initially to present a welcome view
+    self.tblView.alpha = 0.0;
 
-	if (IS_IPAD()) {
-		self.tblView.rowHeight = ROW_HEIGHT+80;
-	} else {
-		self.tblView.rowHeight = ROW_HEIGHT;
-	}
+    if (IS_IPAD()) {
+        self.tblView.rowHeight = ROW_HEIGHT + 80;
+    } else {
+        self.tblView.rowHeight = ROW_HEIGHT;
+    }
 
-	[self.view addSubview:self.tblView];
+    [self.view addSubview:self.tblView];
 
-	self.view.autoresizingMask		= UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
-	self.view.autoresizesSubviews	= YES;
+    self.view.autoresizingMask		= UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+    self.view.autoresizesSubviews	= YES;
 }
 
 - (void)viewDidLoad
 {
-	[self populateTable];
+    [self populateTable];
 
-	[super viewDidLoad];
+    [super viewDidLoad];
 }
 
 - (void)viewDidUnload
 {
-	self.subcategories = nil;
+    self.subcategories = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-	return YES;
+    return YES;
 }
 
 #pragma mark -
@@ -81,49 +81,49 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-	return 1;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-	return [self.subcategories count];
+    return [self.subcategories count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-	static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"Cell";
 
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
-	if (cell == nil) {
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-	}
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
 
-	cell.textLabel.text = [[self.subcategories objectAtIndex:indexPath.row] objectForKey:@"name"];
+    cell.textLabel.text = [[self.subcategories objectAtIndex:indexPath.row] objectForKey:@"name"];
 
-	/* Draw a growing line of buttons to demonstate the scaling
-	 */
-	float	kInset		= 4;
-	float	kSpacing	= 10;
-	float	buttonY		= kSpacing;
+    /* Draw a growing line of buttons to demonstate the scaling
+    */
+    float	kInset		= 4;
+    float	kSpacing	= 10;
+    float	buttonY		= kSpacing;
 
-	for (float i = 0; i < 1; i++) {
-		/* Always round up coordinates before passing them into UIKit
-		 */
-		float imageWidth = ceilf(22 * sqrtf(i + 1));
+    for (float i = 0; i < 1; i++) {
+    /* Always round up coordinates before passing them into UIKit
+    */
+    float imageWidth = ceilf(22 * sqrtf(i + 1));
 
-		CGSize imageSize1 = CGSizeMake(imageWidth + 140, imageWidth + 140);
+    CGSize imageSize1 = CGSizeMake(imageWidth + 140, imageWidth + 140);
 
-		/* Inset the button image
-		 */
-		CGSize imageSize2 = CGSizeMake(imageSize1.width - kInset * 2, imageSize1.height - kInset * 2);
+    /* Inset the button image
+    */
+    CGSize imageSize2 = CGSizeMake(imageSize1.width - kInset * 2, imageSize1.height - kInset * 2);
 
-		/* Set the button image from the PDF asset.
-		 */
+    /* Set the button image from the PDF asset.
+    */
 
-		buttonY += imageWidth + kSpacing;
+    buttonY += imageWidth + kSpacing;
 
-		cell.imageView.image = [UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize2];
+    cell.imageView.image = [UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize2];
 	}
 
 	//    cell.imageView.image = [UIImage imageNamed:@"icon.png"];
