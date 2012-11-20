@@ -112,18 +112,41 @@
     */
     float imageWidth = ceilf(22 * sqrtf(i + 1));
 
-    CGSize imageSize1 = CGSizeMake(imageWidth + 140, imageWidth + 140);
+        if (IS_IPAD()) {
+            CGSize imageSize1 = CGSizeMake(imageWidth + 300, imageWidth + 300/*the height*/);
 
+            /* Inset the button image
+             */
+            CGSize imageSize2 = CGSizeMake(imageSize1.width - kInset * 2, imageSize1.height - kInset * 2);
+            
+            buttonY += imageWidth + kSpacing;
+            
+            cell.imageView.image = [UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize2];
+
+            
+
+        }else{
+    CGSize imageSize1 = CGSizeMake(imageWidth + 140, imageWidth + 140/*the height*/);
+        
+            /* Inset the button image
+             */
+            CGSize imageSize2 = CGSizeMake(imageSize1.width - kInset * 2, imageSize1.height - kInset * 2);
+            buttonY += imageWidth + kSpacing;
+            
+            cell.imageView.image = [UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize2];
+            
+ 
+        }
     /* Inset the button image
     */
-    CGSize imageSize2 = CGSizeMake(imageSize1.width - kInset * 2, imageSize1.height - kInset * 2);
+            //CGSize imageSize2 = CGSizeMake(imageSize1.width - kInset * 2, imageSize1.height - kInset * 2);
 
     /* Set the button image from the PDF asset.
     */
 
     buttonY += imageWidth + kSpacing;
 
-    cell.imageView.image = [UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize2];
+            //    cell.imageView.image = [UIImage imageWithPDFNamed:@"Icon512x512.pdf" atSize:imageSize2];
 	}
 
 	//    cell.imageView.image = [UIImage imageNamed:@"icon.png"];
@@ -171,10 +194,11 @@
 	label.tag	= NAME_TAG;
 	label.font	= [UIFont boldSystemFontOfSize:MAIN_FONT_SIZE];
 	label.adjustsFontSizeToFitWidth = YES;
-	[cell.contentView addSubview:label];
+        //[cell.contentView addSubview:label];
 	label.highlightedTextColor = [UIColor whiteColor];
 
-	// Create a label for the time.
+/*
+ // Create a label for the time.
 	rect				= CGRectMake(MIDDLE_COLUMN_OFFSET, (ROW_HEIGHT - LABEL_HEIGHT) / 2.0, MIDDLE_COLUMN_WIDTH, LABEL_HEIGHT);
 	label				= [[UILabel alloc] initWithFrame:rect];
 	label.tag			= TIME_TAG;
@@ -182,7 +206,8 @@
 	label.textAlignment = UITextAlignmentRight;
 	[cell.contentView addSubview:label];
 	label.highlightedTextColor = [UIColor whiteColor];
-
+*/
+    
 	// Create an image view for the quarter image.
 	rect = CGRectMake(RIGHT_COLUMN_OFFSET, (ROW_HEIGHT - IMAGE_SIDE) / 2.0, IMAGE_SIDE, IMAGE_SIDE);
 
